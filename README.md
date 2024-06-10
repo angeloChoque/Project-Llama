@@ -18,7 +18,6 @@ Make sure you have Node.js and npm installed. You can download them from [nodejs
 
 ```bash
 git clone https://github.com/angeloChoque/My-Portfolio.git
-cd My-Portfolio
 npm install
 cd client
 npm run dev
