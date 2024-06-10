@@ -17,7 +17,7 @@ Make sure you have Node.js and npm installed. You can download them from [nodejs
 ### Clone the repository
 
 ```bash
-git clone https://github.com/angeloChoque/My-Portfolio.git
+git clone https://github.com/angeloChoque/Project-Llama.git
 npm install
 cd client
 npm run dev
