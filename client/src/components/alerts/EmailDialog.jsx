@@ -12,18 +12,17 @@ import {
   Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { Resend } from "resend";
-import PropTypes from 'prop-types';
-
-const resend = new Resend(`re_HhhTHcZ6_Dw579Sz7penFKBaS3yGN1eMa`);
+import PropTypes from "prop-types";
 
 const EmailDialog = ({ onclose }) => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     type: "",
     email: "",
+    comment: "",
   });
+
+  const [status, setStatus] = useState("");
 
   const handleChange = (event) => {
     setFormData({
@@ -36,22 +35,25 @@ const EmailDialog = ({ onclose }) => {
     event.preventDefault();
 
     try {
-        const { data, error } = await resend.emails.send({
-            from: 'Acme <onboarding@resend.dev>',
-            to: [formData.email],
-            subject: `Technical Support - ${formData.type}`,
-            html: `<p>Hello ${formData.firstName} ${formData.lastName},</p><p>This is a test email regarding your ${formData.type} request.</p>`,
-            });
+      const response = await fetch("https://formspree.io/f/xvoeezrj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-        if (error) {
-        console.error({ error });
-        } else {
-        console.log({ data });
-        }
-        } catch (error) {
-            console.error("Error sending email:", error);
-        }
-    };
+      if (response.ok) {
+        setStatus("Formulario enviado con éxito!");
+        setFormData({ fullName: "", type: "", email: "", comment: "" });
+      } else {
+        setStatus("Hubo un error al enviar el formulario.");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setStatus("Hubo un error al enviar el formulario.");
+    }
+  };
 
   return (
     <>
@@ -62,48 +64,24 @@ const EmailDialog = ({ onclose }) => {
       </Box>
       <Box p={3}>
         <Typography align="center" variant="h5" component="h2" gutterBottom>
-          Technical Support
+          Contact
         </Typography>
         <Typography variant="body2" component="h2" gutterBottom>
-          Write your full name and select the type of assistance you need.
-          Afterwards, we will send you an email with the necessary information.
+          Write your details here and they will be sent to my email so I can get
+          in touch with you. If you want to contact me, leave a comment, or
+          report a bug.
         </Typography>
         <form onSubmit={handleSubmit}>
           <TextField
-            id="firstName"
-            name="firstName"
-            label="Name"
+            id="fullName"
+            name="fullName"
+            label="Full Name"
             variant="outlined"
             fullWidth
             margin="normal"
-            value={formData.firstName}
+            value={formData.fullName}
             onChange={handleChange}
           />
-          <TextField
-            id="lastName"
-            name="lastName"
-            label="Last Name"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={formData.lastName}
-            onChange={handleChange}
-          />
-          <FormControl fullWidth margin="normal">
-            <InputLabel id="type-label">Type</InputLabel>
-            <Select
-              labelId="type-label"
-              id="type"
-              name="type"
-              value={formData.type}
-              onChange={handleChange}
-              label="Type"
-            >
-              <MenuItem value={"assistance"}>Assistance</MenuItem>
-              <MenuItem value={"contact"}>Contact</MenuItem>
-              <MenuItem value={"commentary"}>Commentary</MenuItem>
-            </Select>
-          </FormControl>
           <TextField
             id="email"
             name="email"
@@ -112,6 +90,33 @@ const EmailDialog = ({ onclose }) => {
             fullWidth
             margin="normal"
             value={formData.email}
+            onChange={handleChange}
+          />
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="type-label">Tipo</InputLabel>
+            <Select
+              labelId="type-label"
+              id="type"
+              name="type"
+              value={formData.type}
+              onChange={handleChange}
+              label="Type"
+            >
+              <MenuItem value={"bug"}>Bug</MenuItem>
+              <MenuItem value={"contact"}>Contac</MenuItem>
+              <MenuItem value={"comment"}>Comment</MenuItem>
+            </Select>
+          </FormControl>
+          <TextField
+            id="comment"
+            name="comment"
+            label="Comment"
+            variant="outlined"
+            fullWidth
+            multiline
+            rows={4}
+            margin="normal"
+            value={formData.comment}
             onChange={handleChange}
           />
           <Stack>
@@ -125,17 +130,18 @@ const EmailDialog = ({ onclose }) => {
             </Button>
           </Stack>
         </form>
+        {status && (
+          <Typography variant="body2" color="error">
+            {status}
+          </Typography>
+        )}
       </Box>
     </>
   );
 };
 
 EmailDialog.propTypes = {
-    onclose: PropTypes.func
+  onclose: PropTypes.func,
 };
 
 export default EmailDialog;
-
-
-
-

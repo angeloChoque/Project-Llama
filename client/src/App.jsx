@@ -68,7 +68,7 @@ function App() {
               <ListItemIcon>
                 <HelpIcon  />
               </ListItemIcon>
-              technical support
+              Contact
             </ListItemButton>
           </Box>
           <Dialog
