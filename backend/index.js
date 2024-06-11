@@ -1,5 +1,5 @@
-import { ConnectDB, PORT } from '../DataBase.js'
-import app from '../app.js'
+import { ConnectDB, PORT } from './DataBase.js'
+import app from './app.js'
 
 ConnectDB()
 

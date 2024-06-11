@@ -8,7 +8,7 @@ const AboutPage = () => {
       <Title title="About The Page" Icon={ContactMailIcon} />
       <Container>
         <Paper>
-          <Box p={3} height={"615px"}>
+          <Box p={3} >
             <Typography pb={2} align={"center"} variant="h3">
               PROJECT LLAMA
             </Typography>
@@ -24,15 +24,17 @@ const AboutPage = () => {
               built with the MERN Stack, using libraries such as Dnd-Kit,
               Big-calendar, among others.
             </Typography>
-            <Typography fontWeight={"bold"}>Description:</Typography>
+            <Typography fontWeight={"bold"}>Libraries & Frameworks:</Typography>
                 <Box component={"li"} fontWeight={"normal"} >Dnd-Kit</Box>
                 <Box component={"li"} fontWeight={"normal"} >Big Calendar</Box>
                 <Box component={"li"} fontWeight={"normal"} >Mongo DB</Box>
                 <Box component={"li"} fontWeight={"normal"} >Express</Box>
                 <Box component={"li"} fontWeight={"normal"} >React</Box>
-                <Box component={"li"} fontWeight={"normal"} >Next</Box>
+                <Box component={"li"} fontWeight={"normal"} >NodeJs</Box>
                 <Box component={"li"} fontWeight={"normal"} >Vite</Box>
-                <Box component={"li"} mb={2} fontWeight={"normal"} >Resend</Box>
+                <Box component={"li"} fontWeight={"normal"} >Formspree</Box>
+                <Box component={"li"} fontWeight={"normal"} >Git</Box>
+                <Box component={"li"} mb={2} fontWeight={"normal"} >GitHub</Box>
             <Typography fontWeight={"bold"}>Email:</Typography>
             <Typography mb={2} fontSize={14}>
               ancricoma_angelo@hotmail.com
