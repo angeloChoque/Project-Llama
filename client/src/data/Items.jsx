@@ -2,7 +2,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import DatasetIcon from "@mui/icons-material/Dataset";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 export const ITEM = [
   {
     Title: "Home",
@@ -16,28 +16,28 @@ export const ITEM = [
     SubTitle: "Employee Data",
     content: "Add the employee's information here",
     Icon: <DatasetIcon />,
-    Path: "/data",
+    Path: "/employees",
   },
   {
     Title: "Tasks",
     SubTitle: "Table Task",
     content: "Add the tasks to the employee here.",
     Icon: <PlaylistAddCheckIcon />,
-    Path: "/task",
+    Path: "/tasks",
   },
   {
     Title: "Calendar",
-    SubTitle: " Calendar",
+    SubTitle: "Calendar",
     content: "Here you will find the employees' birthdays and events.",
     Icon: <CalendarMonthIcon />,
     Path: "/calendar",
   },
   {
-    Title: "about the page",
-    SubTitle: " About the page ",
+    Title: "About",
+    SubTitle: "About",
     content: "Here you will find information about how the page was made.",
     Icon: <AccountBoxIcon />,
-    Path: "/aboutPage",
+    Path: "/about",
   },
 ];
 
@@ -94,7 +94,7 @@ export const FORM_ITEM = [
   },
 ];
 
-export const TABLE_CELL=[
+export const TABLE_CELL = [
   {
     id: 1,
     Title: "DNI",
@@ -125,4 +125,4 @@ export const TABLE_CELL=[
     Name: "Position",
     grid: 5,
   },
-]
+];

@@ -1,6 +1,7 @@
 import axios from "axios";
+import { config } from "../env";
 
-const baseUrl = "http://localhost:5001/employees";
+const baseUrl = config.API_URL+"/employees";
 
 export const getEmployeesRequest = () => axios.get(`${baseUrl}`);
 

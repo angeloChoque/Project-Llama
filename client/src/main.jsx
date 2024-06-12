@@ -12,7 +12,7 @@ dayjs.extend(utc);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Project-Llama"  >
       <ThemeProvider theme={theme}>
           <CssBaseline />
           <App />

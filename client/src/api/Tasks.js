@@ -1,6 +1,7 @@
 import axios from "axios";
+import { config } from "../env";
 
-const baseUrl = "http://localhost:5001/tasks";
+const baseUrl = config.API_URL+"/tasks";
 
 export const getTasksRequest = () => axios.get(`${baseUrl}`);
 

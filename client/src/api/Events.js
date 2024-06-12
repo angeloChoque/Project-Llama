@@ -1,6 +1,7 @@
 import axios from "axios";
+import { config } from "../env";
 
-const baseUrl = "http://localhost:5001/events";
+const baseUrl = config.API_URL+"/events";
 
 export const getEventsRequest = () => axios.get(`${baseUrl}`);
 

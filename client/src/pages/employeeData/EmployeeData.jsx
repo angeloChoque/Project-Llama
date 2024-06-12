@@ -196,7 +196,7 @@ function EmployeeData() {
                       <TableCell>
                         <Box sx={{ display: "flex", justifyContent: "right" }}>
                           <IconButton
-                          onClick={()=> navigate(`/infoPage/${employee._id}`)}
+                          onClick={()=> navigate(`/employees/${employee._id}`)}
                           >
                           <SearchIcon/>
                           </IconButton>

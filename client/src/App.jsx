@@ -30,11 +30,11 @@ function App() {
         <EmployeeContext>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/data" element={<EmployeeData />} />
-            <Route path="/task" element={<TaskDragAndDrop />} />
-            <Route path="/infoPage/:id" element={<InformationPage />} />
+            <Route path="/employees" element={<EmployeeData />} />
+            <Route path="/tasks" element={<TaskDragAndDrop />} />
+            <Route path="/employees/:id" element={<InformationPage />} />
             <Route path="/calendar" element={<Calendar />} />
-            <Route path="/aboutPage" element={<AboutPage />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </EmployeeContext>
         <Fab 
