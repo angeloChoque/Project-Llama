@@ -25,12 +25,12 @@ const AboutPage = () => {
               Big-calendar, among others.
             </Typography>
             <Typography fontWeight={"bold"}>Libraries & Frameworks:</Typography>
+                <Box component={"li"} fontWeight={"normal"} >NodeJs</Box>
+                <Box component={"li"} fontWeight={"normal"} >Express</Box>
+                <Box component={"li"} fontWeight={"normal"} >Mongo DB</Box>
                 <Box component={"li"} fontWeight={"normal"} >Dnd-Kit</Box>
                 <Box component={"li"} fontWeight={"normal"} >Big Calendar</Box>
-                <Box component={"li"} fontWeight={"normal"} >Mongo DB</Box>
-                <Box component={"li"} fontWeight={"normal"} >Express</Box>
                 <Box component={"li"} fontWeight={"normal"} >React</Box>
-                <Box component={"li"} fontWeight={"normal"} >NodeJs</Box>
                 <Box component={"li"} fontWeight={"normal"} >Vite</Box>
                 <Box component={"li"} fontWeight={"normal"} >Formspree</Box>
                 <Box component={"li"} fontWeight={"normal"} >Git</Box>
