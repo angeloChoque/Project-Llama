@@ -6,7 +6,7 @@ import {
   GetEmployees,
   UpdateEmployee,
   GetBirthdayEmployees,
-} from "../controllers/employee.cotrollers.js";
+} from "../controllers/employee.controllers.js";
 import { EMPLOYEE_ROUTE } from "./router.map.js";
 
 const router = Router();
